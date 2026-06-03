@@ -45,3 +45,5 @@ The proposed direction is a modern, trustworthy local comparison site: warm off-
 - Local smoke test: `/`, `/man-and-van-harrow-pinner/`, `/moving-costs-harrow/`, `/sitemap.xml`, and `/robots.txt` served 200 locally.
 
 No deployment, DNS, production Vercel connection, merge, or `main` modification was performed.
+
+Preview trigger: 2026-06-03 21:32:32 +01:00

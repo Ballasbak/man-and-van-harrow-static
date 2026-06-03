@@ -1,0 +1,7 @@
+{
+  "name": "man-and-van-harrow-static",
+  "private": true,
+  "type": "module",
+  "scripts": { "audit": "node scripts/audit.mjs" },
+  "dependencies": { "cheerio": "^1.0.0", "p-limit": "^7.0.0", "undici": "^6.0.0" }
+}

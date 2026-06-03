@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://man-and-van-harrow.co.uk/sitemap.xml

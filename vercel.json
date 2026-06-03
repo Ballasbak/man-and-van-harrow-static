@@ -1,0 +1,296 @@
+{
+  "cleanUrls": false,
+  "trailingSlash": true,
+  "headers": [
+    {
+      "source": "/sitemap.xml",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/xml; charset=utf-8"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/areas-covered",
+      "destination": "/areas-covered/",
+      "statusCode": 301
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact/",
+      "statusCode": 301
+    },
+    {
+      "source": "/house-removals-eastcote",
+      "destination": "/house-removals-eastcote/",
+      "statusCode": 301
+    },
+    {
+      "source": "/house-removals-edgware",
+      "destination": "/house-removals-edgware/",
+      "statusCode": 301
+    },
+    {
+      "source": "/house-removals-greenford",
+      "destination": "/house-removals-greenford/",
+      "statusCode": 301
+    },
+    {
+      "source": "/house-removals-harrow",
+      "destination": "/house-removals-harrow/",
+      "statusCode": 301
+    },
+    {
+      "source": "/house-removals-kenton",
+      "destination": "/house-removals-kenton/",
+      "statusCode": 301
+    },
+    {
+      "source": "/house-removals-north-harrow",
+      "destination": "/house-removals-north-harrow/",
+      "statusCode": 301
+    },
+    {
+      "source": "/house-removals-northwood",
+      "destination": "/house-removals-northwood/",
+      "statusCode": 301
+    },
+    {
+      "source": "/house-removals-pinner",
+      "destination": "/house-removals-pinner/",
+      "statusCode": 301
+    },
+    {
+      "source": "/house-removals-rayners-lane",
+      "destination": "/house-removals-rayners-lane/",
+      "statusCode": 301
+    },
+    {
+      "source": "/house-removals-ruislip",
+      "destination": "/house-removals-ruislip/",
+      "statusCode": 301
+    },
+    {
+      "source": "/house-removals-south-harrow",
+      "destination": "/house-removals-south-harrow/",
+      "statusCode": 301
+    },
+    {
+      "source": "/house-removals-stanmore",
+      "destination": "/house-removals-stanmore/",
+      "statusCode": 301
+    },
+    {
+      "source": "/house-removals-wealdstone",
+      "destination": "/house-removals-wealdstone/",
+      "statusCode": 301
+    },
+    {
+      "source": "/house-removals-wembley",
+      "destination": "/house-removals-wembley/",
+      "statusCode": 301
+    },
+    {
+      "source": "/house-removals-west-harrow",
+      "destination": "/house-removals-west-harrow/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-it-works",
+      "destination": "/how-it-works/",
+      "statusCode": 301
+    },
+    {
+      "source": "/man-and-van-harrow-edgware",
+      "destination": "/man-and-van-harrow-edgware/",
+      "statusCode": 301
+    },
+    {
+      "source": "/man-and-van-harrow-greenford",
+      "destination": "/man-and-van-harrow-greenford/",
+      "statusCode": 301
+    },
+    {
+      "source": "/man-and-van-harrow-kenton",
+      "destination": "/man-and-van-harrow-kenton/",
+      "statusCode": 301
+    },
+    {
+      "source": "/man-and-van-harrow-north-harrow",
+      "destination": "/man-and-van-harrow-north-harrow/",
+      "statusCode": 301
+    },
+    {
+      "source": "/man-and-van-harrow-on-the-hill",
+      "destination": "/man-and-van-harrow-on-the-hill/",
+      "statusCode": 301
+    },
+    {
+      "source": "/man-and-van-harrow-pinner",
+      "destination": "/man-and-van-harrow-pinner/",
+      "statusCode": 301
+    },
+    {
+      "source": "/man-and-van-harrow-queensbury",
+      "destination": "/man-and-van-harrow-queensbury/",
+      "statusCode": 301
+    },
+    {
+      "source": "/man-and-van-harrow-rayners-lane",
+      "destination": "/man-and-van-harrow-rayners-lane/",
+      "statusCode": 301
+    },
+    {
+      "source": "/man-and-van-harrow-ruislip",
+      "destination": "/man-and-van-harrow-ruislip/",
+      "statusCode": 301
+    },
+    {
+      "source": "/man-and-van-harrow-south-harrow",
+      "destination": "/man-and-van-harrow-south-harrow/",
+      "statusCode": 301
+    },
+    {
+      "source": "/man-and-van-harrow-stanmore",
+      "destination": "/man-and-van-harrow-stanmore/",
+      "statusCode": 301
+    },
+    {
+      "source": "/man-and-van-harrow-wealdstone",
+      "destination": "/man-and-van-harrow-wealdstone/",
+      "statusCode": 301
+    },
+    {
+      "source": "/man-and-van-harrow-wembley",
+      "destination": "/man-and-van-harrow-wembley/",
+      "statusCode": 301
+    },
+    {
+      "source": "/man-and-van-harrow-west-harrow",
+      "destination": "/man-and-van-harrow-west-harrow/",
+      "statusCode": 301
+    },
+    {
+      "source": "/man-and-van-harrow",
+      "destination": "/man-and-van-harrow/",
+      "statusCode": 301
+    },
+    {
+      "source": "/moving-costs-harrow",
+      "destination": "/moving-costs-harrow/",
+      "statusCode": 301
+    },
+    {
+      "source": "/partners",
+      "destination": "/partners/",
+      "statusCode": 301
+    },
+    {
+      "source": "/privacy-policy",
+      "destination": "/privacy-policy/",
+      "statusCode": 301
+    },
+    {
+      "source": "/small-removals-harrow",
+      "destination": "/small-removals-harrow/",
+      "statusCode": 301
+    },
+    {
+      "source": "/small-removals-kenton",
+      "destination": "/small-removals-kenton/",
+      "statusCode": 301
+    },
+    {
+      "source": "/small-removals-north-harrow",
+      "destination": "/small-removals-north-harrow/",
+      "statusCode": 301
+    },
+    {
+      "source": "/small-removals-rayners-lane",
+      "destination": "/small-removals-rayners-lane/",
+      "statusCode": 301
+    },
+    {
+      "source": "/small-removals-south-harrow",
+      "destination": "/small-removals-south-harrow/",
+      "statusCode": 301
+    },
+    {
+      "source": "/small-removals-wealdstone",
+      "destination": "/small-removals-wealdstone/",
+      "statusCode": 301
+    },
+    {
+      "source": "/small-removals-west-harrow",
+      "destination": "/small-removals-west-harrow/",
+      "statusCode": 301
+    },
+    {
+      "source": "/student-moves-harrow-on-the-hill",
+      "destination": "/student-moves-harrow-on-the-hill/",
+      "statusCode": 301
+    },
+    {
+      "source": "/student-moves-harrow",
+      "destination": "/student-moves-harrow/",
+      "statusCode": 301
+    },
+    {
+      "source": "/student-moves-kenton",
+      "destination": "/student-moves-kenton/",
+      "statusCode": 301
+    },
+    {
+      "source": "/student-moves-north-harrow",
+      "destination": "/student-moves-north-harrow/",
+      "statusCode": 301
+    },
+    {
+      "source": "/student-moves-queensbury",
+      "destination": "/student-moves-queensbury/",
+      "statusCode": 301
+    },
+    {
+      "source": "/student-moves-rayners-lane",
+      "destination": "/student-moves-rayners-lane/",
+      "statusCode": 301
+    },
+    {
+      "source": "/student-moves-south-harrow",
+      "destination": "/student-moves-south-harrow/",
+      "statusCode": 301
+    },
+    {
+      "source": "/student-moves-wealdstone",
+      "destination": "/student-moves-wealdstone/",
+      "statusCode": 301
+    },
+    {
+      "source": "/student-moves-wembley",
+      "destination": "/student-moves-wembley/",
+      "statusCode": 301
+    },
+    {
+      "source": "/student-moves-west-harrow",
+      "destination": "/student-moves-west-harrow/",
+      "statusCode": 301
+    },
+    {
+      "source": "/terms-conditions",
+      "destination": "/terms-conditions/",
+      "statusCode": 301
+    }
+  ]
+}

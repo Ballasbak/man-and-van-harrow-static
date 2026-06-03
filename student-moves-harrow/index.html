@@ -13,58 +13,227 @@
 <meta property="og:url" content="https://man-and-van-harrow.co.uk/student-moves-harrow/">
 <meta property="og:site_name" content="Man and Van Harrow">
 <style>
-*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,sans-serif;color:#1a2540;background:#fff;line-height:1.6;font-size:16px}
-a{color:#0b6cf2;text-decoration:none}a:hover{text-decoration:underline}
-.wrap{max-width:880px;margin:0 auto;padding:0 20px}
-header.site{border-bottom:1px solid #e6ecf2;background:#fff;padding:14px 0}
-header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
-.logo{font-weight:700;font-size:18px;color:#0a2a55;letter-spacing:.2px}
-.logo span{color:#0b6cf2}
-nav.primary a{margin-left:18px;color:#3b4b66;font-size:14px}
-.breadcrumb{font-size:13px;color:#67768f;padding:14px 0 0}
-.breadcrumb a{color:#67768f}
-h1.page{font-size:30px;line-height:1.25;margin:14px 0 8px;color:#0a2a55}
-.lede{color:#3b4b66;font-size:17px;margin:0 0 22px}
-main.content h2{font-size:22px;margin:28px 0 10px;color:#0a2a55}
-main.content h3{font-size:18px;margin:22px 0 8px;color:#102b56}
-main.content p{margin:10px 0}
-main.content ul,main.content ol{padding-left:22px;margin:10px 0}
-main.content li{margin:4px 0}
-.cta{background:linear-gradient(180deg,#f4f8ff,#e8f0ff);border:1px solid #cfdcf3;border-radius:10px;padding:22px;margin:28px 0;text-align:center}
-.cta h2{margin:0 0 6px;color:#0a2a55}
-.cta p{margin:0 0 14px;color:#3b4b66}
-.cta a.btn{display:inline-block;background:#0b6cf2;color:#fff;font-weight:600;padding:13px 22px;border-radius:8px;font-size:16px}
-.cta a.btn:hover{background:#0a5cd1;text-decoration:none}
-.cta .note{font-size:12px;color:#67768f;margin-top:10px}
-.siblings{background:#f7f9fc;border-radius:10px;padding:18px;margin:28px 0}
-.siblings h2{margin:0 0 10px;font-size:17px;color:#0a2a55}
-.siblings ul{margin:0;padding-left:18px;columns:2;gap:12px}
-.siblings li{margin:3px 0;break-inside:avoid}
-footer.site{border-top:1px solid #e6ecf2;margin-top:40px;padding:24px 0;color:#67768f;font-size:13px;background:#fafbfd}
-footer.site .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-footer.site a{color:#67768f;margin-right:14px}
-.partner{font-size:12px;color:#67768f;margin-top:6px}
-@media (max-width:600px){h1.page{font-size:24px}.siblings ul{columns:1}nav.primary a{margin-left:10px;font-size:13px}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif;color:#0f1b2d;background:#fff;line-height:1.6;font-size:16px}
+a{color:#0d6b7a;text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%;display:block}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.wrap-narrow{max-width:760px;margin:0 auto;padding:0 20px}
+
+/* Header */
+header.site{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:saturate(140%) blur(10px);-webkit-backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid #e6ecf2}
+header.site .bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px;color:#0f1b3d;letter-spacing:-.01em}
+.brand .badge{font-size:11px;font-weight:600;color:#0d6b7a;background:#e6f4f5;padding:3px 8px;border-radius:999px;letter-spacing:.04em;text-transform:uppercase}
+nav.primary{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+nav.primary a{color:#3b4b66;font-size:14px;font-weight:500}
+nav.primary a:hover{color:#0f1b3d;text-decoration:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:600;border-radius:10px;padding:11px 18px;font-size:15px;line-height:1;transition:transform .12s ease, box-shadow .12s ease, background .12s ease;border:1px solid transparent;cursor:pointer}
+.btn-primary{background:#e8631a;color:#fff;box-shadow:0 1px 2px rgba(232,99,26,.25)}
+.btn-primary:hover{background:#d4561a;text-decoration:none;transform:translateY(-1px);box-shadow:0 6px 18px rgba(232,99,26,.28)}
+.btn-secondary{background:#fff;color:#0f1b3d;border-color:#cdd6e2}
+.btn-secondary:hover{border-color:#0f1b3d;text-decoration:none}
+.btn-ghost{background:transparent;color:#0d6b7a;font-weight:600}
+.btn-ghost:hover{text-decoration:underline}
+header .btn-primary{padding:9px 16px;font-size:14px}
+
+/* Hero */
+.hero{position:relative;padding:56px 0 64px;background:linear-gradient(180deg,#f6f9fc 0%,#fff 100%);border-bottom:1px solid #eef2f7;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(60% 50% at 8% 0%, rgba(13,107,122,.08), transparent 70%),
+  radial-gradient(40% 40% at 100% 30%, rgba(232,99,26,.06), transparent 70%);pointer-events:none}
+.hero .inner{position:relative;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:48px;align-items:center}
+.hero .breadcrumb{font-size:13px;color:#67768f;margin-bottom:16px}
+.hero .breadcrumb a{color:#67768f}
+.hero h1{font-size:clamp(28px,3.4vw,42px);line-height:1.15;margin:0 0 14px;color:#0f1b3d;letter-spacing:-.02em;font-weight:800}
+.hero .sub{font-size:17px;color:#3b4b66;margin:0 0 24px;max-width:560px}
+.hero .actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.hero .trust{margin-top:22px;display:flex;flex-wrap:wrap;gap:6px 18px;font-size:13px;color:#3b4b66}
+.hero .trust span{display:inline-flex;align-items:center;gap:6px}
+.hero .trust span::before{content:"✓";color:#0d6b7a;font-weight:700}
+.hero-card{background:#fff;border:1px solid #e6ecf2;border-radius:16px;padding:24px;box-shadow:0 12px 32px -16px rgba(15,27,61,.18)}
+.hero-card .eyebrow{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#0d6b7a;margin-bottom:8px}
+.hero-card h3{margin:0 0 6px;font-size:18px;color:#0f1b3d}
+.hero-card p{margin:0 0 16px;font-size:14px;color:#3b4b66}
+.hero-card ul{list-style:none;padding:0;margin:0 0 18px;display:flex;flex-direction:column;gap:8px;font-size:14px;color:#0f1b3d}
+.hero-card ul li{display:flex;gap:8px;align-items:flex-start}
+.hero-card ul li::before{content:"→";color:#0d6b7a;font-weight:700;flex-shrink:0}
+.hero-card .btn{width:100%;justify-content:center}
+.hero-card .micro{font-size:12px;color:#67768f;text-align:center;margin-top:10px}
+
+/* Section base */
+section{padding:56px 0}
+section.tight{padding:40px 0}
+section.alt{background:#f6f9fc}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#0d6b7a;margin-bottom:10px;display:block}
+h2.section-title{font-size:clamp(22px,2.6vw,30px);margin:0 0 8px;color:#0f1b3d;letter-spacing:-.015em;font-weight:700}
+.section-sub{font-size:16px;color:#3b4b66;margin:0 0 28px;max-width:640px}
+
+/* Cards */
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.card{background:#fff;border:1px solid #e6ecf2;border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:10px;transition:border-color .15s ease, transform .15s ease, box-shadow .15s ease}
+.card:hover{border-color:#0d6b7a;transform:translateY(-2px);box-shadow:0 10px 28px -18px rgba(15,27,61,.25)}
+.card .num{font-size:12px;font-weight:700;color:#0d6b7a;letter-spacing:.08em}
+.card h3{margin:0;font-size:17px;color:#0f1b3d;font-weight:700;letter-spacing:-.01em}
+.card p{margin:0;font-size:14.5px;color:#3b4b66;line-height:1.55}
+.card .more{margin-top:auto;padding-top:14px;font-size:14px;font-weight:600;color:#e8631a}
+.card a.more:hover{text-decoration:underline}
+
+/* Trust chips */
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid #e6ecf2;color:#0f1b3d;font-size:13px;font-weight:500;padding:7px 13px;border-radius:999px}
+.chip::before{content:"";width:6px;height:6px;background:#0d6b7a;border-radius:50%}
+
+/* Details / long content */
+.details-wrap{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:40px;align-items:start}
+.prose{color:#283448;font-size:15.5px;line-height:1.7}
+.prose h2{font-size:20px;color:#0f1b3d;margin:28px 0 8px;letter-spacing:-.01em;font-weight:700}
+.prose h2:first-child{margin-top:0}
+.prose h3{font-size:16px;color:#0f1b3d;margin:20px 0 6px;font-weight:700}
+.prose p{margin:8px 0}
+.prose ul,.prose ol{padding-left:20px;margin:8px 0}
+.prose li{margin:4px 0}
+.prose a{color:#0d6b7a;font-weight:500}
+.side-card{background:#fff;border:1px solid #e6ecf2;border-radius:14px;padding:22px;position:sticky;top:88px}
+.side-card .eyebrow{margin-bottom:8px}
+.side-card h3{margin:0 0 8px;font-size:17px;color:#0f1b3d}
+.side-card p{margin:0 0 14px;font-size:14px;color:#3b4b66}
+.side-card .btn{width:100%;justify-content:center}
+.side-card .micro{font-size:12px;color:#67768f;text-align:center;margin-top:10px}
+
+/* Info-page prose container (no sidebar) */
+.info-prose{max-width:760px;margin:0 auto}
+
+/* Secondary CTA band */
+.cta-band{background:linear-gradient(135deg,#0f1b3d 0%, #14305a 100%);color:#fff;border-radius:18px;padding:36px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.cta-band h2{margin:0 0 6px;font-size:22px;color:#fff;letter-spacing:-.01em}
+.cta-band p{margin:0;color:#cfd9ea;font-size:14.5px;max-width:480px}
+.cta-band .btn-primary{background:#e8631a}
+.cta-band .btn-primary:hover{background:#fff;color:#0f1b3d}
+
+/* Sibling areas */
+.siblings-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px}
+.siblings-grid a{display:flex;align-items:center;justify-content:space-between;background:#fff;border:1px solid #e6ecf2;padding:12px 14px;border-radius:10px;font-size:14px;color:#0f1b3d;font-weight:500}
+.siblings-grid a::after{content:"→";color:#0d6b7a;font-weight:700}
+.siblings-grid a:hover{border-color:#0d6b7a;text-decoration:none}
+
+/* Footer */
+footer.site{background:#0f1b3d;color:#cfd9ea;padding:36px 0 28px;margin-top:64px}
+footer.site .row{display:flex;gap:24px;justify-content:space-between;flex-wrap:wrap;align-items:flex-start}
+footer.site .brand-foot{display:flex;flex-direction:column;gap:6px;max-width:420px}
+footer.site .brand-foot strong{color:#fff;font-size:15px}
+footer.site .brand-foot p{margin:0;font-size:13px;color:#9fb0ce;line-height:1.55}
+footer.site .links{display:flex;gap:18px;flex-wrap:wrap;font-size:13px}
+footer.site .links a{color:#cfd9ea}
+footer.site .links a:hover{color:#fff;text-decoration:underline}
+footer.site .legal{margin-top:24px;border-top:1px solid #1c2c54;padding-top:16px;font-size:12px;color:#7d8fb0;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+/* Responsive */
+@media (max-width:880px){
+  .hero{padding:36px 0 40px}
+  .hero .inner{grid-template-columns:1fr;gap:24px}
+  .cards{grid-template-columns:1fr;gap:14px}
+  .details-wrap{grid-template-columns:1fr;gap:24px}
+  .side-card{position:static}
+  nav.primary{gap:12px}
+  nav.primary a:not(.btn){display:none}
+  header .btn-primary{padding:8px 14px;font-size:13px}
+  .cta-band{padding:24px;flex-direction:column;align-items:flex-start}
+  .cta-band .btn{width:100%;justify-content:center}
+}
+@media (max-width:480px){
+  .hero h1{font-size:26px}
+  section{padding:40px 0}
+}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Student Moves Harrow \u2013 Affordable Man & Van for Students", "url": "https://man-and-van-harrow.co.uk/student-moves-harrow/", "inLanguage": "en-GB", "isPartOf": {"@type": "WebSite", "name": "Man and Van Harrow", "url": "https://man-and-van-harrow.co.uk/"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://man-and-van-harrow.co.uk/"}, {"@type": "ListItem", "position": 2, "name": "Student Moves in Harrow", "item": "https://man-and-van-harrow.co.uk/student-moves-harrow/"}]}</script>
 </head>
 <body>
-<header class="site"><div class="wrap">
-  <a class="logo" href="/">Man &amp; Van <span>Harrow</span></a>
+<header class="site"><div class="wrap"><div class="bar">
+  <a class="brand" href="/"><span>Man &amp; Van Harrow</span><span class="badge">Compare via MAZE</span></a>
   <nav class="primary">
     <a href="/man-and-van-harrow/">Man &amp; Van</a>
     <a href="/house-removals-harrow/">House Removals</a>
     <a href="/areas-covered/">Areas</a>
     <a href="/how-it-works/">How It Works</a>
-    <a href="/contact/">Contact</a>
+    <a class="btn btn-primary" href="https://mazeremovals.co.uk/?from=harrow&service=man_and_van&area=harrow&utm_source=harrow_feeder&utm_medium=local_site&utm_campaign=harrow_static_rebuild" rel="noopener">Get quotes</a>
   </nav>
-</div></header>
-<div class="wrap">
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › Student Moves in Harrow</nav>
-  <h1 class="page">Student Moves in Harrow</h1>
-  <main class="content">
-<p>Compare affordable man and van services for student moves to, from, and around Harrow.</p>
+</div></div></header>
+<main>
+<section class="hero"><div class="wrap"><div class="inner">
+  <div>
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › Student Moves in Harrow</nav>
+    <h1>Student Moves in Harrow</h1>
+    <p class="sub">Compare affordable man and van services for student moves to, from, and around Harrow.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="https://mazeremovals.co.uk/?from=harrow&service=man_and_van&area=harrow&utm_source=harrow_feeder&utm_medium=local_site&utm_campaign=harrow_static_rebuild" rel="noopener">Compare quotes via MAZE →</a>
+      <a class="btn btn-ghost" href="#how">How it works</a>
+    </div>
+    <div class="trust"><span>Free quotes</span><span>No obligation</span><span>Local movers</span><span>~60 seconds</span></div>
+  </div>
+  <aside class="hero-card">
+    <div class="eyebrow">Compare via MAZE</div>
+    <h3>Get free moving quotes</h3>
+    <p>Compare local Harrow-area movers in about 60 seconds.</p>
+    <ul>
+      <li>Independent local movers respond with quotes</li>
+      <li>No call centres, no booking fees</li>
+      <li>You choose the mover and the price</li>
+    </ul>
+    <a class="btn btn-primary" href="https://mazeremovals.co.uk/?from=harrow&service=man_and_van&area=harrow&utm_source=harrow_feeder&utm_medium=local_site&utm_campaign=harrow_static_rebuild" rel="noopener">Compare quotes via MAZE →</a>
+    <div class="micro">Free · No obligation · ~60 seconds</div>
+  </aside>
+</div></div></section>
+
+<section id="how" class="alt tight"><div class="wrap">
+  <span class="eyebrow">How it works</span>
+  <h2 class="section-title">From request to chosen mover — in three steps</h2>
+  <p class="section-sub">MAZE is the comparison platform. Independent movers serving the Harrow area respond with their own quotes — you compare and choose.</p>
+  <div class="cards">
+    <div class="card"><span class="num">STEP 01</span><h3>Tell us about your move</h3><p>Postcodes, move size and date. Takes about 60 seconds — no account needed.</p></div>
+    <div class="card"><span class="num">STEP 02</span><h3>Local movers respond via MAZE</h3><p>Independent Harrow-area movers see your request and send quotes directly through MAZE.</p></div>
+    <div class="card"><span class="num">STEP 03</span><h3>You choose the right mover</h3><p>Compare price, reviews and availability. No call centres, no booking fees, no obligation.</p></div>
+  </div>
+</div></section>
+
+<section class="tight"><div class="wrap">
+  <span class="eyebrow">Services compared</span>
+  <h2 class="section-title">Pick the type of move that fits</h2>
+  <p class="section-sub">Different jobs need different vehicles and crews. Compare quotes against the service that matches your move.</p>
+  <div class="cards"><div class="card">
+        <span class="num">SM</span>
+        <h3>Student Moves</h3>
+        <p>Halls, shared houses and term-end moves. Flexible dates, small loads, sensible prices.</p>
+        <a class="more" href="https://mazeremovals.co.uk/?from=harrow&service=man_and_van&area=harrow&utm_source=harrow_feeder&utm_medium=local_site&utm_campaign=harrow_static_rebuild" rel="noopener">Get quotes →</a>
+      </div>
+<div class="card">
+        <span class="num">M&V</span>
+        <h3>Man & Van</h3>
+        <p>Smaller loads, flats, single items and short-notice jobs. Compare local Harrow-area van crews.</p>
+        <a class="more" href="https://mazeremovals.co.uk/?from=harrow&service=man_and_van&area=harrow&utm_source=harrow_feeder&utm_medium=local_site&utm_campaign=harrow_static_rebuild" rel="noopener">Get quotes →</a>
+      </div>
+<div class="card">
+        <span class="num">HR</span>
+        <h3>House Removals</h3>
+        <p>Full-home moves with bigger crews, larger vehicles and packing options.</p>
+        <a class="more" href="https://mazeremovals.co.uk/?from=harrow&service=man_and_van&area=harrow&utm_source=harrow_feeder&utm_medium=local_site&utm_campaign=harrow_static_rebuild" rel="noopener">Get quotes →</a>
+      </div></div>
+</div></section>
+
+<section class="alt tight"><div class="wrap">
+  <span class="eyebrow">Local coverage</span>
+  <h2 class="section-title">Harrow and surrounding areas</h2>
+  <p class="section-sub">Local movers regularly cover these districts. Coverage in nearby areas depends on the mover&rsquo;s route and availability on the day.</p>
+  <div class="chips"><span class="chip">Harrow</span><span class="chip">Pinner</span><span class="chip">Ruislip</span><span class="chip">Kenton</span><span class="chip">Wealdstone</span><span class="chip">North Harrow</span><span class="chip">South Harrow</span><span class="chip">Stanmore</span><span class="chip">Edgware</span><span class="chip">Eastcote</span></div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="details-wrap">
+    <div class="prose">
+
 <p>✓ Student-friendly prices | ✓ Local Harrow movers | ✓ No-obligation quotes</p>
 <h2>Affordable Student Moving Services in Harrow</h2>
 <p>Moving as a student doesn’t need to be expensive or complicated. Our student moves service helps you compare local man and van providers in Harrow offering affordable, flexible options.</p>
@@ -90,24 +259,46 @@ footer.site a{color:#67768f;margin-right:14px}
 <h2>Student Moves Harrow: New Areas we cover</h2>
 <ul><li>Student moves Harrow</li><li>Student Moves Wemble y Student Moves Kenton Student Moves Wealdstone Student Moves North Harrow Student moves South Harrow Student Moves Rayners Lane Student Moves West Harrow Student Moves Harrow on the Hill Student Moves Queensbury</li></ul>
 <h2>Get Small Removal Quotes in Harrow</h2>
-  </main>
-  <div class="cta">
-    <h2>Get Free Student Move Quotes</h2>
-    <p>Compare quotes from vetted Harrow movers via MAZE — our partner comparison platform.</p>
-    <a class="btn" href="https://mazeremovals.co.uk/?from=harrow&service=man_and_van&area=harrow&utm_source=harrow_feeder&utm_medium=local_site&utm_campaign=harrow_static_rebuild" rel="noopener">Compare Quotes Now</a>
-    <div class="note">You'll be taken to MAZE Removals — our trusted comparison partner.</div>
   </div>
-  <aside class="siblings"><h2>Areas we cover in Harrow</h2><ul><li><a href="/man-and-van-harrow-pinner/">Pinner</a></li><li><a href="/man-and-van-harrow-wealdstone/">Wealdstone</a></li><li><a href="/man-and-van-harrow-kenton/">Kenton</a></li><li><a href="/man-and-van-harrow-wembley/">Wembley</a></li><li><a href="/man-and-van-harrow-stanmore/">Stanmore</a></li><li><a href="/man-and-van-harrow-edgware/">Edgware</a></li><li><a href="/man-and-van-harrow-ruislip/">Ruislip</a></li><li><a href="/man-and-van-harrow-rayners-lane/">Rayners Lane</a></li></ul></aside>
-</div>
+    <aside class="side-card">
+      <div class="eyebrow">Ready to compare?</div>
+      <h3>Get quotes from local movers</h3>
+      <p>Submit your move details once. Local Harrow-area movers respond via MAZE with their own quotes.</p>
+      <a class="btn btn-primary" href="https://mazeremovals.co.uk/?from=harrow&service=man_and_van&area=harrow&utm_source=harrow_feeder&utm_medium=local_site&utm_campaign=harrow_static_rebuild" rel="noopener">Compare quotes via MAZE →</a>
+      <div class="micro">Free · No obligation</div>
+    </aside>
+  </div>
+</div></section>
+
+<section class="alt tight"><div class="wrap">
+  <span class="eyebrow">Nearby areas</span>
+  <h2 class="section-title">Other Harrow-area pages</h2>
+  <div class="siblings-grid"><a href="/man-and-van-harrow-pinner/">Pinner</a><a href="/man-and-van-harrow-wealdstone/">Wealdstone</a><a href="/man-and-van-harrow-kenton/">Kenton</a><a href="/man-and-van-harrow-wembley/">Wembley</a><a href="/man-and-van-harrow-stanmore/">Stanmore</a><a href="/man-and-van-harrow-edgware/">Edgware</a><a href="/man-and-van-harrow-ruislip/">Ruislip</a><a href="/man-and-van-harrow-rayners-lane/">Rayners Lane</a></div>
+</div></section>
+
+<section class="tight"><div class="wrap"><div class="cta-band">
+    <div><h2>Ready to compare local movers?</h2><p>Submit your move once — independent Harrow-area movers respond with quotes via MAZE.</p></div>
+    <a class="btn btn-primary" href="https://mazeremovals.co.uk/?from=harrow&service=man_and_van&area=harrow&utm_source=harrow_feeder&utm_medium=local_site&utm_campaign=harrow_static_rebuild" rel="noopener">Compare quotes via MAZE →</a>
+  </div></div></section>
+</main>
 <footer class="site"><div class="wrap">
-  <div>
-    <strong>Man and Van Harrow</strong> — local moving information for Harrow and surrounding areas.
-    <div class="partner">Quotes provided in partnership with <a href="https://mazeremovals.co.uk/?from=harrow&amp;utm_source=harrow_feeder&amp;utm_medium=local_site&amp;utm_campaign=harrow_static_rebuild" rel="noopener">MAZE Removals</a>.</div>
+  <div class="row">
+    <div class="brand-foot">
+      <strong>Man &amp; Van Harrow — local moving comparison</strong>
+      <p>This site helps people in Harrow and surrounding areas compare local movers. Quotes are provided through <strong style="color:#fff">MAZE</strong>, an independent comparison platform. MAZE is not a removals company — independent local movers respond with their own quotes and you choose who to book.</p>
+    </div>
+    <div class="links">
+      <a href="/how-it-works/">How It Works</a>
+      <a href="/areas-covered/">Areas</a>
+      <a href="/partners/">For Movers</a>
+      <a href="/contact/">Contact</a>
+      <a href="/privacy-policy/">Privacy</a>
+      <a href="/terms-conditions/">Terms</a>
+    </div>
   </div>
-  <div>
-    <a href="/privacy-policy/">Privacy</a>
-    <a href="/terms-conditions/">Terms</a>
-    <a href="/contact/">Contact</a>
+  <div class="legal">
+    <span>© 2026 Man &amp; Van Harrow — local comparison site.</span>
+    <span>Quotes powered by MAZE.</span>
   </div>
 </div></footer>
 </body></html>

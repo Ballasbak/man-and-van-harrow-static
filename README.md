@@ -1,12 +1,21 @@
-# man-and-van-harrow-static (Phase 2 build)
+# Harrow Tier 1 Static Build
 
-Static rebuild of man-and-van-harrow.co.uk from approved Phase 1 audit.
+8 pages built from `harrow-tier1-content-pack-v3.md` with approved corrections.
 
-- 55 URLs preserved verbatim (no slug / title / H1 changes).
-- Content extracted from live pages, WP/Elementor debris stripped.
-- CTA destinations from `audit/comparison.csv`.
-- Canonical = trailing-slash URL.
-- Bare (no trailing slash) variants 301 → trailing slash via vercel.json.
-- No DNS cutover yet.
+Pages:
+- /
+- /man-and-van-harrow/
+- /house-removals-harrow/
+- /moving-costs-harrow/
+- /student-moves-harrow/
+- /small-removals-harrow/
+- /areas-covered/
+- /how-it-works/
 
-Generated 2026-06-03. 55 pages.
+CTA contract (locked):
+```
+https://mazeremovals.co.uk/?from=harrow&utm_source=harrow_feeder&utm_medium=local_site&utm_campaign=harrow_static_rebuild
+```
+Service params appended on submit are restricted to: `man_and_van` or `removals`.
+
+This is a static-only build. No deploy, no DNS, no merge.

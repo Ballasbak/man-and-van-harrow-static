@@ -2,7 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 
 const root = path.resolve(import.meta.dirname, "..");
-const wave1 = new Map([
+const satellites = new Map([
   ["man-and-van-harrow-edgware", ["man-and-van", "Edgware", "man_and_van"]],
   ["man-and-van-harrow-greenford", ["man-and-van", "Greenford", "man_and_van"]],
   ["man-and-van-harrow-kenton", ["man-and-van", "Kenton", "man_and_van"]],
@@ -32,12 +32,27 @@ const wave1 = new Map([
   ["student-moves-wealdstone", ["student-moves", "Wealdstone", "man_and_van"]],
   ["student-moves-wembley", ["student-moves", "Wembley", "man_and_van"]],
   ["student-moves-north-harrow", ["student-moves", "North Harrow", "man_and_van"]],
+  ["house-removals-eastcote", ["house-removals", "Eastcote", "removals"]],
+  ["house-removals-greenford", ["house-removals", "Greenford", "removals"]],
+  ["house-removals-northwood", ["house-removals", "Northwood", "removals"]],
+  ["student-moves-harrow-on-the-hill", ["student-moves", "Harrow on the Hill", "man_and_van"]],
+  ["student-moves-queensbury", ["student-moves", "Queensbury", "man_and_van"]],
+  ["student-moves-rayners-lane", ["student-moves", "Rayners Lane", "man_and_van"]],
+  ["student-moves-south-harrow", ["student-moves", "South Harrow", "man_and_van"]],
+  ["student-moves-west-harrow", ["student-moves", "West Harrow", "man_and_van"]],
+  ["small-removals-kenton", ["small-removals", "Kenton", "man_and_van"]],
+  ["small-removals-north-harrow", ["small-removals", "North Harrow", "man_and_van"]],
+  ["small-removals-rayners-lane", ["small-removals", "Rayners Lane", "man_and_van"]],
+  ["small-removals-south-harrow", ["small-removals", "South Harrow", "man_and_van"]],
+  ["small-removals-wealdstone", ["small-removals", "Wealdstone", "man_and_van"]],
+  ["small-removals-west-harrow", ["small-removals", "West Harrow", "man_and_van"]],
 ]);
 
 const serviceInfo = {
   "man-and-van": { phrase: "man and van", hub: "/man-and-van-harrow/", schema: "Man and Van" },
   "house-removals": { phrase: "house removals", hub: "/house-removals-harrow/", schema: "House Removals" },
   "student-moves": { phrase: "student moves", hub: "/student-moves-harrow/", schema: "Student Moves" },
+  "small-removals": { phrase: "small removals", hub: "/small-removals-harrow/", schema: "Small Removals" },
 };
 
 function normaliseSlug(value) {
@@ -76,8 +91,8 @@ function includesText(text, value) {
 
 function run(routeArg) {
   const slug = normaliseSlug(routeArg);
-  const config = wave1.get(slug);
-  if (!config) throw new Error(`Not a Wave 1 route: ${routeArg}`);
+  const config = satellites.get(slug);
+  if (!config) throw new Error(`Not a satellite route: ${routeArg}`);
 
   const [service, area, mazeService] = config;
   const info = serviceInfo[service];
@@ -111,6 +126,12 @@ function run(routeArg) {
   const sameServiceSiblings = [...new Set(links.filter(href =>
     href.startsWith(siblingPrefix) && href !== expectedPath && href !== info.hub
   ))];
+  const sameAreaAlternatives = [...satellites.entries()]
+    .filter(([, [otherService, otherArea]]) => otherService !== service && otherArea === area)
+    .map(([otherSlug]) => `/${otherSlug}/`);
+  const hasCrossServiceRoute = sameAreaAlternatives.some(href => links.includes(href));
+  const hasRelatedServiceHub = ["/man-and-van-harrow/", "/house-removals-harrow/", "/small-removals-harrow/", "/student-moves-harrow/"]
+    .some(href => href !== info.hub && links.includes(href));
   const forbiddenSchema = ["LocalBusiness", "MovingCompany", "Product", "Offer", "Review", "AggregateRating"];
   const forbiddenWords = ["MAZE Removals", "MAZE engine", "MAZE quote system", "MAZE booking system"];
   const allScripts = [...html.matchAll(/<script\b([^>]*)>/gi)].map(match => match[1]);
@@ -141,7 +162,7 @@ function run(routeArg) {
   check("hub-up link", links.filter(href => href === info.hub).length >= 1, info.hub);
   check("same-service sibling links", sameServiceSiblings.length >= 2 && sameServiceSiblings.length <= 3, sameServiceSiblings.join(", "));
   check("areas-covered link", links.includes("/areas-covered/"));
-  check("cross-service same-area link", links.some(href => href.includes(areaSlug) && !href.includes(service)));
+  check("cross-service same-area link", sameAreaAlternatives.length ? hasCrossServiceRoute : hasRelatedServiceHub);
   check("all MAZE CTAs canonical", externalCtas.length >= 5 && externalCtas.every(href => href === expectedCta), `${externalCtas.length} CTAs`);
   check("BreadcrumbList schema", schemaTypes.includes("BreadcrumbList"));
   check("Service schema", schemas.some(item => item["@type"] === "Service" && item.serviceType === info.schema && item.areaServed?.name === `${area}, Harrow, London`));

@@ -23,6 +23,11 @@
   ],
   "redirects": [
     {
+      "source": "/page-sitemap.xml",
+      "destination": "/sitemap.xml",
+      "statusCode": 301
+    },
+    {
       "source": "/areas-covered",
       "destination": "/areas-covered/",
       "statusCode": 301

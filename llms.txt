@@ -1,0 +1,32 @@
+# Man and Van Harrow
+
+> Man and Van Harrow is a static local moving quote feeder site for Harrow and nearby areas. It helps prospective movers understand available services and submit quote requests to MAZE.
+
+MAZE is a UK moving quote comparison and lead-distribution platform. MAZE is not a removals company.
+
+Canonical site: https://man-and-van-harrow.co.uk
+Sitemap: https://man-and-van-harrow.co.uk/sitemap.xml
+
+## Main Services
+
+- Man and Van Harrow
+- House Removals Harrow
+- Student Moves Harrow
+- Small Removals Harrow
+- Moving Costs Harrow
+- Areas Covered
+- How It Works
+
+## Local Pages
+
+The site contains area-specific pages covering man-and-van services, house removals, student moves and small removals across Harrow and nearby districts. See the sitemap for the complete URL list.
+
+## Partners
+
+The partner page explains how vetted moving partners can register with MAZE and receive qualified moving enquiries through the MAZE partner platform.
+
+## Important Information
+
+- Quote comparison and partner registration are handled by MAZE.
+- Man and Van Harrow is a feeder website and does not provide removal services directly.
+- MAZE is a comparison and lead-distribution platform, not a removals company.
